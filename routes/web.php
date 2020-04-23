@@ -16,3 +16,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::group(['prefix' => 'learning-redis'], function(){
+    Route::get('/with-redis', [
+        'uses' => 'Redis\ExampleController@withRedis',
+    ]);
+    Route::get('/without-redis', [
+        'uses' => 'Redis\ExampleController@withoutRedis',
+    ]);
+});
