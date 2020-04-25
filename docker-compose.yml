@@ -50,6 +50,7 @@ services:
     build:
       context: ./docker/jenkins
     container_name: laravel-lab-jenkins
+    privileged: true
     ports:
       - 8081:8080
       - 50000:50000

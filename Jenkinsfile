@@ -2,11 +2,8 @@ pipeline {
     agent any 
     stages {
         stage('Build') {
-            agent {
-                docker 'composer'
-            }
             steps {
-                sh 'echo Build laravel project'
+                sh 'composer install'
             }
         }
         stage('Test') { 
