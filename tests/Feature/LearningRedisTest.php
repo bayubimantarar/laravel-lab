@@ -27,10 +27,10 @@ class LearningRedisTest extends TestCase
      * @group LearningRedis
      * @return void
      */
-    public function getWithRedisPage()
-    {
-        $this
-            ->get('/learning-redis/with-redis')
-            ->assertStatus(200);
-    }
+    // public function getWithRedisPage()
+    // {
+    //     $this
+    //         ->get('/learning-redis/with-redis')
+    //         ->assertStatus(200);
+    // }
 }
