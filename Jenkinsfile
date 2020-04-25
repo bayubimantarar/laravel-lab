@@ -1,7 +1,10 @@
 pipeline {
     agent any 
     stages {
-        stage('Build') { 
+        stage('Build') {
+            agent (
+                docker { image: 'composer' }
+            )
             steps {
                 sh 'echo Build laravel project'
             }
@@ -9,6 +12,7 @@ pipeline {
         stage('Test') { 
             steps {
                 sh 'echo Test laravel project'
+                sh './vendor/bin/phpunit'
             }
         }
     }
