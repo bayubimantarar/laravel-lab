@@ -19,6 +19,9 @@ Route::get('/', function () {
 
 
 Route::group(['prefix' => 'learning-redis'], function(){
+    Route::get('/', function(){
+        return 'Learning Redis!';
+    });
     Route::get('/with-redis', [
         'uses' => 'Redis\ExampleController@withRedis',
     ]);
